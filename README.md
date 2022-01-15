@@ -11,11 +11,10 @@ Can also be used for ctf challenges. Our php webshell is obfuscated, which has u
 #### [+] Dont just be a defacer alone!, do cool shits with the webshell. 
 
 # Created by
-<h5> TermuxHackz Society Team Members - AnonyminHack5 </h5>
-
-
-<p>ths1335.php is a powerful webshell which has several and multiple features which are useful for spammers, defacers and also 
-useful for those who loves to try cool shits too haha ^_^. It contains, Fake Mailer, Whois scan, iplookup, Cracking Cpanel, Whm, Admin Panel Finder and so much more. This help bypass site security and not like other shells. </p>
+<b>TermuxHackz Society Team Members - AnonyminHack5</b>
+<br><br>
+Ths1335.php is a powerful webshell which has several and multiple features which are useful for spammers, defacers and also 
+useful for those who loves to try cool shits too haha ^_^. It contains, Fake Mailer, Whois scan, iplookup, Cracking Cpanel, Whm, Admin Panel Finder and so much more. This help bypass site security and not like other shells.
 
 # Steps to use this webshell
 ```
