@@ -49,7 +49,7 @@ Hahah, make sure you use with care!!
 ths1335.php shell is under the MIT license. This webshell is free for all use and for home and educational usages as well. Thanks to our team of skilled programmers hahaha. 
 
 Incase you dont like to clone from github, haha, you can download the TermuxHackz Webshell zip from mediafire. <br><br>
-<strong>Download here:- <a href="https://www.mediafire.com/file/nix88zav6acklq9/TermuxHackz-WebShell.zip/file" target="_blank" alt="TermuxHackz Webshell">Download TermuxHackz WebShell here</a>.</strong>       
+<strong>Download here:- <a href="" target="_blank" alt="TermuxHackz Webshell">Download TermuxHackz WebShell here</a>.</strong>       
 
 <p>Kindly star or fork this repo, to support us for this wonderful project </p>
 
