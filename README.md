@@ -8,7 +8,7 @@ Can also be used for ctf challenges. Our php webshell is obfuscated, which has u
 #### [+] Some backdoors may be backdoored (yes, really). Don't ever use this for any malicious purposes.
 #### [+] The backdoors follow the format: Backdoorname_SHA1.php, granted the name of the backdoor is known 
 #### [+] The folder TermuxHackz Webshell contains the webshell (uploader and main shell[ths1335 shell]). 
-#### [+] Dont just be a defacer alone!, do cool shits with the webshell. 
+#### [+] Dont just be a defacer alone!, do cool shits with the webshell. But can also be used for defacing
 
 # Created by
 <b>TermuxHackz Society Team Members - AnonyminHack5</b>
@@ -37,6 +37,19 @@ But if the payload-image doesnt work. Use some file upload bypass tricks
 
 Hahah, make sure you use with care!! 
 ```
+# Some features of ths1335 Shell
+1) File Manager
+2) Dumping SQL database 
+3) Find admin panel page
+4) Execute ssh commands on remote server
+5) TCP and UDP flood ddos
+6) CGI Shell
+7) Ftp brute force
+8) Cracking Cpanels and Whmpanels
+9) Crack WordPress sites and change all usernames and password
+10) Code Injector
+11) And so much fuckin more hahahaha
+
 
 # Ths1335 Shell Images
 ![](ths1.png)
