@@ -153,6 +153,10 @@ Donate to us if you love and appreciate the project. Donate <a href="https://pay
 Version 1.0
 ```
 
+# Join our groups
+<b>Join our Telegram group: </b> <a href="https://t.me/termuxhackz1">here</a><br>
+<b> Visit our <a href="https://termuxhackz.github.io/index.html">Site</a><br></b>
+<b> Join our facebook group: <a href="https://www.facebook.com/groups/423043615428159/?ref=share">here</a></b><br>
 
 # Notice Bugs? 
 If you use our webshell and you notice bugs in em feel free to email me those bugs and We will try fix them. 
