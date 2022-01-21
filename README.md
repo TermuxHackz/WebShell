@@ -81,13 +81,13 @@ flile.phpJunk123png<br/>
 </code><br/>
 <br>
 5) Add another layer of extensions to the previous check: <br/>
-<code>
+<br><code>
 file.png.jpg.php
 file.php%00.png%00.jpg
 </code>
 <br>
 6) Try to put the exec extension before the valid extension and pray so the server is misconfigured. **(useful to exploit Apache misconfigurations where anything with extension .php, but not necessarily ending in .php** will execute code): <br>
-<code>
+<br><code>
 ex: file.php.png 
 </code>
 <br>
@@ -113,7 +113,7 @@ AAA<--SNIP 232 A-->AAA.php.png
  <br>
 
 Or you can try other tricks you know that might work. Haha
-
+</b>
 # Some features of ths1335 Shell
 1) File Manager
 2) Dumping SQL database 
