@@ -157,7 +157,8 @@ Version 1.0
 <b>Join our Telegram group: </b> <a href="https://t.me/termuxhackz1">here</a><br>
 <b> Visit our <a href="https://termuxhackz.github.io/index.html">Site</a><br></b>
 <b> Join our facebook group: <a href="https://www.facebook.com/groups/423043615428159/?ref=share">here</a></b><br>
-Or join by scanning the qr code 
+Join our telegram Channel also by scanning the qr code below <br>
+
 ![](images/received_1065724630950464.jpeg) 
 
 # Notice Bugs? 
